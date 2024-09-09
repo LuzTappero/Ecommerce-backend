@@ -1,0 +1,9 @@
+node_modules/
+.env
+# Archivos de configuración de TypeScript
+tsconfig.tsbuildinfo
+# Directorios de salida de compilación
+dist/
+build/
+# Archivos de log
+*.log
