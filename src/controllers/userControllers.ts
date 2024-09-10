@@ -68,8 +68,6 @@ class UserController {
     const { email, password } = req.body;
     const user = await login(email, password)
     const token= signToken(user)
-    console.log(user)
-    console.log(token)
     res.status(201).json({ message: "Login successful", token});
   } catch (error) {
     console.log(error)

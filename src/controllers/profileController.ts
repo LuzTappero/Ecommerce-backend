@@ -17,6 +17,7 @@ interface ProfileRequest extends Request {
   };
 }
 
+
 class ProfileController {
   static async getAll(
   req: Request,

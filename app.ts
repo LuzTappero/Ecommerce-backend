@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction} from 'express'
+import express, { Request, Response} from 'express'
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import helmet from './node_modules/helmet/index.cjs';

@@ -4,6 +4,7 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET as string ;
 
+
 interface AuthenticatedUser{
   user_id: string;
   username: string;
@@ -21,7 +22,6 @@ export async function verifyToken(req: UserRequest,
   try{
     const authHeader = req.headers["authorization"]
     const token= authHeader && authHeader.split(" ")[1]
-    console.log(token)
     if (!token){
       res.status(401).json({message: 'Access not authorized'})
       return
@@ -30,9 +30,9 @@ export async function verifyToken(req: UserRequest,
       if (err) {
         console.error("Error de verificación de JWT:", (err as Error).message);
         if (err.name === 'TokenExpiredError') {
-          console.log("El token ha expirado.");
+          console.log("Token expired");
         } else if (err.name === 'JsonWebTokenError') {
-          console.log("Token inválido.");
+          console.log("Invalid token.");
         }
         return res.sendStatus(403);
       }
