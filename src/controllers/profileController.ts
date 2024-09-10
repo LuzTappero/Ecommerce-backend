@@ -17,23 +17,7 @@ interface ProfileRequest extends Request {
   };
 }
 
-
 class ProfileController {
-  static async getAll(
-  req: Request,
-  res: Response,
-  next: NextFunction
-  ): Promise<void> {
-  try {
-      const profiles = await ProfileModel.findAll();
-      if (!profiles) {
-      return next(new Error("Profiles not found"));
-      }
-      res.status(200).json(profiles);
-  } catch (error) {
-      next(error);
-  }
-  }
   static async getByUserId(
   req: ProfileRequest,
   res: Response,
@@ -52,28 +36,7 @@ class ProfileController {
   } catch (error) {
       next(error);
   }
-  }
-  static async getByProfileId(
-  req: ProfileRequest,
-  res: Response,
-  next: NextFunction
-  ): Promise<void> {
-  try {
-      const { profile_id } = req.params;
-      const profile = await ProfileModel.findOne({
-      where: { profile_id },
-      });
-
-      if (!profile) {
-      res.status(404).json({ message: "Profile not found" });
-      return;
-      }
-      res.json(profile);
-  } catch (error) {
-      console.error("Error fetching profile:", error);
-      res.status(500).json({ message: "Internal server error" });
-  }
-  }
+}
   static async createProfile(
       req: ProfileRequest,
       res: Response,

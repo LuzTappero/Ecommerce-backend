@@ -35,7 +35,6 @@ class OrderController {
                 message: 'Order saved successfully!',
             });
     }catch(error){
-        console.error('Error saving order:', error);
         res.status(500).json({ message: 'Failed to save order.' });
     }
     }
@@ -60,13 +59,11 @@ class OrderController {
                 res.status(404).json({ message: 'No purchases found for this user.' });
                 return
             }
-            console.log(userOrders)
             res.status(200).json(userOrders);
             return
         }catch(error){
-            console.error(error);
-                res.status(500).json({ message: 'Error fetching user purchases.' });
-                return
+            res.status(500).json({ message: 'Error fetching user purchases.' });
+            return
         }
     }
 }
