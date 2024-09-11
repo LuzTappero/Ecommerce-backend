@@ -1,7 +1,6 @@
 import { Sequelize, DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../config/sqlConfig";
 import { UserModel } from "./userModel";
-import { OrderItemModel } from "./orderItemModel";
 
 interface OrderAttributes {
     order_id: number;

@@ -16,7 +16,7 @@ class ProductController {
       }
       res.status(200).json({ message: "Get all products", products });
     } catch (error) {
-      next(error);
+        next(error);
     }
   }
   static async getById(
@@ -32,7 +32,7 @@ class ProductController {
       }
       res.status(200).json({ message: "Get products by Id ", product });
     } catch (error) {
-      next(error);
+        next(error);
     }
   }
   static async create(
@@ -58,10 +58,10 @@ class ProductController {
             }
           );
           imagePath = result.secure_url;
-          console.log("Image uploaded to Cloudinary:", imagePath);
+            console.log("Image uploaded to Cloudinary:", imagePath);
         } catch (uploadError) {
           console.error("Error uploading to Cloudinary:", uploadError);
-          res.status(500).json({ error: "Error uploading image" });
+            res.status(500).json({ error: "Error uploading image" });
           return;
         }
       } else {
@@ -76,7 +76,7 @@ class ProductController {
       });
       res.status(201).json({ message: "Product created successfully" });
     } catch (error) {
-      next(error);
+        next(error);
     }
   }
   static async update(
@@ -139,7 +139,7 @@ class ProductController {
       const result = await ProductModel.destroy({ where: { product_id: productId } });
       if (result === 0) {
         res.status(404).json({ message: "Product not found" });
-        return;
+      return;
       }
       res.status(204).send();
     }catch (error: unknown) {

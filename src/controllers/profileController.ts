@@ -29,9 +29,9 @@ class ProfileController {
       where: { user_id: userId },
       });
       if (profile) {
-      res.status(200).json({ exists: true, profile });
+        res.status(200).json({ exists: true, profile });
       } else {
-      res.status(404).json({ exists: false });
+        res.status(404).json({ exists: false });
       }
   } catch (error) {
       next(error);

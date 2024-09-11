@@ -82,7 +82,7 @@ class UserController {
     try {
       res.status(200).json({ message: "Logout successful" });
     } catch (error) {
-      next(error);
+        next(error);
     }
   }
   static async deleteUser(
@@ -99,7 +99,7 @@ class UserController {
       await user.destroy();
       res.status(200).json({ message: "User deleted successfully" });
     } catch (error) {
-      next(error);
+        next(error);
     }
   }
   static async updateUser(

@@ -1,6 +1,5 @@
 import { Sequelize, DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../config/sqlConfig";
-import { OrderItem } from "sequelize";
 import { OrderModel } from "./orderModel";
 import { ProductModel } from "./productModel";
 
