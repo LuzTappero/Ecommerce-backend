@@ -61,6 +61,12 @@ El proyecto cuenta con funcionalidades específicas para administradores, que pu
 
     DB_DIALECT=mysql
 
+  Variables de Entorno para la configuración de JWT
+
+    JWT_SECRET = yourSecretKey
+
+    JWT_EXPIRATION= 4500
+
 - Variables de entorno para la configuración de la nube de imágenes cloudinary
 
     CLOUD_NAME=dmofgxbvt
